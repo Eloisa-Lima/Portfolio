@@ -1,0 +1,331 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #2C2C2C;
+    color: #F5F5F5;
+    line-height: 1.6;
+  }
+  
+  /* Menu Fixo */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgb(44, 44, 44);
+    padding: 10px 20px;
+    z-index: 1000;
+  }
+  
+  nav .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav .logo img {
+    height: 40px;
+  }
+  
+  nav .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    color: #F5F5F5;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  nav a:hover {
+    color: #E83F6F;
+    transform: translateY(-3px);
+  }
+  
+  /* Seção Home */
+  .home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .home .content {
+    z-index: 1;
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .home p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .home .btn {
+    background: #E83F6F;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+  }
+  
+  .home .btn:hover {
+    background: #c5305a;
+  }
+  
+  .scroll-down {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Seção Sobre Mim */
+  .sobre {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .sobre .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #E83F6F;
+    margin-bottom: 20px;
+    object-fit: cover;
+  }
+  
+  .sobre h2 {
+    margin-bottom: 20px;
+  }
+  
+  .sobre .btn {
+    background: #E83F6F;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .sobre .btn:hover {
+    background: #c5305a;
+  }
+  
+  /* Seção Especializações */
+  .especializacoes {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .especializacoes .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  
+  .especializacoes .skill {
+    background: rgba(245, 245, 245, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .especializacoes .skill:hover {
+    transform: translateY(-10px);
+  }
+  
+  .especializacoes .skill i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #E83F6F;
+  }
+  
+  .especializacoes .highlight {
+    color: #E83F6F;
+  }
+  
+  /* Seção Projetos, Certificados e Soft Skills */
+.projetos, .certificados, .soft-skills {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-item {
+    flex: 0 0 33.33%; /* Exibe 3 itens por vez */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .carousel-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .carousel-item:hover img {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+  }
+  
+  .carousel-content {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(44, 44, 44, 0.9);
+    padding: 20px;
+    transition: bottom 0.3s;
+  }
+  
+  .carousel-item:hover .carousel-content {
+    bottom: 0; /* Exibe o conteúdo ao passar o mouse */
+  }
+  
+  .carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(232, 63, 111, 0.7);
+    color: #F5F5F5;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-prev {
+    left: 10px;
+  }
+  
+  .carousel-next {
+    right: 10px;
+  }
+  
+  /* Seção Contato */
+  .contato {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+  }
+  
+  .contato form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .contato input, .contato textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #E83F6F;
+    background: rgba(245, 245, 245, 0.1);
+    color: #F5F5F5;
+  }
+  
+  .contato button {
+    background: #E83F6F;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contato button:hover {
+    background: #c5305a;
+  }
+  
+  .info-contato {
+    margin-top: 20px;
+  }
+  
+  .info-contato p {
+    margin: 10px 0;
+  }
+  
+  .info-contato i {
+    margin-right: 10px;
+    color: #E83F6F;
+  }
+  
+  .social-links {
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    color: #F5F5F5;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .social-links a:hover {
+    color: #E83F6F;
+  }
